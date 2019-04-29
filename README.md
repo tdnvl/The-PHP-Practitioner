@@ -91,10 +91,42 @@ Basically a dictonnary in Python: a set of key/values pairs. The assignement is 
 
 ```
 $person = [
-    'age' => 31;
-    'hair' => 'brown';
+    'age' => 31,
+    'hair' => 'brown',
     'job' => 'web developer'    
 ];
 
 ```
+
+When calling an associative array in a `foreach` loop, only the values will be returned:
+
+```
+
+<ul>
+
+    <?php foreach ($person as $feature) : ?>
+
+    <li><?= $feature; ?></li>
+
+    <?php endforeach; ?>
+
+</ul>
+
+```
+
+If we want to return both the keys and the values, we'll have to do it this way:
+
+```
+<ul>
+
+    <?php foreach ($person as $feature => $value) : ?>
+
+    <li><strong><?= $feature; ?>: </strong><?= $value; ?></li>
+
+    <?php endforeach; ?>
+
+</ul>
+```
+
+Notice how the `$feature => $value` syntax mirrors the way values are assigned to keys.
 
